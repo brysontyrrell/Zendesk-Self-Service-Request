@@ -8,12 +8,12 @@ import urllib
 import urllib2
 
 ### You can test this script by running it from the Terminal as such:
-### $ /path/to/JAMFSW_VPP_Request.py 1 2 'user.name' 'App Name'
+### $ /path/to/zendesk-self-service-request.py 1 2 'user.name' 'App Name'
 
 ### The user name is passed to the policy when the user logs in to 
 JSSUser = str(sys.argv[3]) + "@yourdomain.com"
 
-### The requested app's name is passed by the JSS/Self Service (Parameter 4 in the Policy)
+### The requested app's name is passed by the JSS (Parameter 4 in the Policy)
 VPPAppName = str(sys.argv[4])
 
 ### This is the form ID for the Zendesk ticket that will be created
@@ -31,6 +31,7 @@ CFDepartment = 44444444
 ZenGroupID = 55555555
 
 ### This is the information for the Zendesk environment (token authentication)
+### Alternatively, these could be passed parameters from the JSS for added security
 ZenURL = 'https://yourdomain.zendesk.com/api/v2'
 ZenAgent = 'agent-account'
 ZenToken = 'agent-account-token'
